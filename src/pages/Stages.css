@@ -1,0 +1,337 @@
+.stages-page {
+  min-height: 100vh;
+}
+
+/* Stages Overview */
+.stages-overview {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 60px 0;
+}
+
+.stages-map {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.map-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: fadeInUp 0.6s ease forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+}
+
+.map-marker {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--stage-color), transparent);
+  border: 2px solid var(--stage-color);
+  border-radius: 50%;
+  color: var(--stage-color);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.map-marker:hover {
+  transform: scale(1.2);
+  background: var(--stage-color);
+  color: white;
+}
+
+.map-stage span {
+  font-size: 0.85rem;
+  color: #a0a0a0;
+  font-weight: 500;
+}
+
+/* Stages Grid */
+.stages-list {
+  padding: 60px 0 80px;
+}
+
+.stages-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.stage-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.stage-card:hover {
+  border-color: var(--stage-color);
+}
+
+.stage-header {
+  position: relative;
+}
+
+.stage-image {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.stage-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stage-image .stage-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.9));
+  display: flex;
+  align-items: flex-end;
+  padding: 25px;
+}
+
+.stage-number {
+  padding: 8px 20px;
+  background: var(--stage-color);
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.stage-body {
+  padding: 35px;
+}
+
+.stage-name {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: var(--stage-color);
+}
+
+.stage-description {
+  color: #a0a0a0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.stage-stats {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.stage-stats .stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #d0d0d0;
+}
+
+.stage-stats .stat svg {
+  color: var(--stage-color);
+}
+
+.stage-features h4 {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.feature-tag {
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  font-size: 0.85rem;
+  color: #b0b0b0;
+  transition: all 0.3s ease;
+}
+
+.feature-tag:hover {
+  border-color: var(--stage-color);
+  color: var(--stage-color);
+}
+
+.toggle-artists {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: var(--stage-color);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.toggle-artists:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Stage Artists */
+.stage-artists {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideDown 0.3s ease;
+}
+
+.stage-artists h4 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.artists-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.day-group h5 {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 15px;
+  color: var(--stage-color);
+}
+
+.day-artists {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.timeline-artist {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.timeline-artist:hover {
+  border-color: var(--stage-color);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(5px);
+}
+
+.timeline-artist img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.timeline-artist .artist-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.timeline-artist .name {
+  font-weight: 600;
+}
+
+.timeline-artist .time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+/* Legend Section */
+.legend-section {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.legend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.legend-item:hover {
+  border-color: var(--stage-color);
+}
+
+.legend-color {
+  width: 15px;
+  height: 50px;
+  background: var(--stage-color);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.legend-info h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.legend-info p {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stage-image {
+    height: 220px;
+  }
+
+  .stage-name {
+    font-size: 1.6rem;
+  }
+
+  .stage-stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .day-artists {
+    grid-template-columns: 1fr;
+  }
+}
